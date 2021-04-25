@@ -1,6 +1,8 @@
 :root{
     --background: #17181a;
     --text: white;
+    --textP: rgb(223, 223, 223);
+    --Span: rgb(86, 124, 228);
 }
 
 * {
@@ -14,10 +16,6 @@ body {
     font-family: "montserrat", sans-serif;
 }
 
-img {
-    height: 15%;
-    width: 30%;
-}
 
 #logo {
     color:var(--text);
@@ -54,6 +52,18 @@ img {
     color: var(--text);
 }
 
+.slide-image {
+    position: relative;
+    flex: 1;
+    flex-basis: 25rem;
+}
+
+.slide-image img {
+    height: 100%;
+    width: 100%;
+    object-fit: cover;
+}
+
 .description {
     display: flex;
     flex-direction: column;
@@ -64,3 +74,79 @@ img {
     padding-left: 5rem;
     position: relative;
 }
+
+.description h2{
+    font-family: "Abril Fatface";
+    font-size: 3rem;
+}
+
+.description p{
+    padding: 3rem 0rem;
+    font-size: 1.5rem;
+    color: var(--textP);
+}
+
+.about-span {
+    color: var(--Span);
+}
+
+.services-span {
+    color: var(--Span);
+}
+
+.myWork-span {
+    color: var(--Span);
+}
+
+.explore {
+    padding: 1rem 2rem;
+    background: none;
+    border: 1px solid var(--text);
+    border-radius: 2rem;
+    color: var(--text);
+    font-size: 1rem;
+    text-decoration: none;
+    align-self: flex-start;
+    cursor: pointer;
+    
+}
+
+.nav-bar {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: white;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    z-index: 1;
+    opacity: 1;
+    /* clip-path: circle(50px at 100% -10%);
+    -webkit-clip-path: circle(50px at 100% -10%); */
+  }
+
+  .burger {
+      cursor: pointer;
+  }
+
+  .nav-links {
+    font-size: 3rem;
+    flex-basis: 30rem;
+  }
+  .nav-links h3 {
+    padding: 3rem 0rem;
+  }
+
+  .contact {
+    flex-basis: 30rem;
+  }
+  .contact h2 {
+    font-size: 3rem;
+    padding: 2rem 0rem;
+  }
+  .contact p {
+    font-size: 1.5rem;
+    line-height: 2rem;
+  }
