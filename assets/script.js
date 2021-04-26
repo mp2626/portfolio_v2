@@ -90,9 +90,28 @@ function activeCursor(e) {
         gsap.to(".title-swipe", 1, { y: "100%" });
     }
 }
+// nav bar toggle
+function navToggle(e) {
+    if (!e.target.classList.contains("active")) {
+        e.target.classList.add("active");
+        gsap.to(".line1", 0.5, { rotate: "45", y: 5, background: "black" });
+        gsap.to(".line2", 0.5, { rotate: "-45", y: -5, background: "black" });
+        gsap.to("#logo", 1, { color: "black" });
+        gsap.to(".nav-bar", 1, { clipPath: "circle(3000px at 100% -10%)" });
+        document.body.classList.add("hide");
+    } else {
+        e.target.classList.remove("active");
+        gsap.to(".line1", 0.5, { rotate: "0", y: 0, background: "white" });
+        gsap.to(".line2", 0.5, { rotate: "0", y: 0, background: "white" });
+        gsap.to("#logo", 1, { color: "white" });
+        gsap.to(".nav-bar", 1, { clipPath: "circle(50px at 100% -10%)" });
+        document.body.classList.remove("hide");
+    }
+}
+
 // event listeners
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
-window.addEventListener("click", navToggle)
+burger.addEventListener("click", navToggle);
 
 animateSlides();

@@ -17,6 +17,9 @@ body {
     overflow-x: hidden;
 }
 
+body.hide {
+    overflow: hidden;
+}
 
 #logo {
     color:var(--text);
@@ -241,3 +244,86 @@ body {
 .scrollmagic-pin-spacer {
     position: static !important;
   }
+
+
+@media screen and (max-width: 1500px) {
+.slide-image img {
+    height: 50vh;
+ }
+}
+
+@media screen and (max-width: 1024px) {
+.slide-image img {
+     padding-top: 4rem;
+ }
+
+ main {
+    width: 100%;
+    margin: 0;
+ }
+
+.slide {
+    display: block;
+    width: 100%;
+    text-align: center;
+ }
+
+.description {
+    padding: 0;
+ }
+
+.description h2 {
+    font-size: 1.6rem;
+    padding: 1rem 0rem;
+ }
+
+.description p {
+    padding: 2rem 1rem;
+    font-size: 1rem;
+    line-height: 1.5rem;
+    text-align: center;
+ }
+
+.explore {
+    width: 60%;
+    margin: auto;
+}
+
+.nav-bar {
+    display: block;
+ }
+
+.nav-links {
+    font-size: 3rem;
+    text-align: center;
+    padding-top: 5rem;
+ }
+
+.contact h2 {
+    font-size: 2rem;
+    text-align: center;
+    padding-top: 3rem;
+ }
+
+.contact h3 {
+    font-size: 1rem;
+    text-align: center;
+ }
+}
+
+@media screen and (max-width: 768px) {
+.contact h2 {
+    text-align: center;
+    padding-right: 22.5rem;
+ }
+
+.contact h3 {
+    text-align: center;
+    padding-right: 22.5rem;
+ }
+
+.nav-links {
+    padding-right: 22.5rem;
+ }
+
+}
