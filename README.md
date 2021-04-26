@@ -50,6 +50,10 @@ When the user hovers on the explore button, the title changes colour.
 
 Responsive design for desktop and mobile.
 
+## Future Work
+
+Link to about me and service pages setup, and build required pages.
+
 # Link to Git Hub
 
 https://github.com/mp2626/portfolio_v2    
