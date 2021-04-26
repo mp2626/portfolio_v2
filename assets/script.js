@@ -90,8 +90,9 @@ function activeCursor(e) {
         gsap.to(".title-swipe", 1, { y: "100%" });
     }
 }
-
+// event listeners
 window.addEventListener("mousemove", cursor);
 window.addEventListener("mouseover", activeCursor);
+window.addEventListener("click", navToggle)
 
 animateSlides();

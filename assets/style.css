@@ -2,7 +2,7 @@
     --background: #17181a;
     --text: white;
     --textP: rgb(223, 223, 223);
-    --Span: rgb(86, 124, 228);
+    --Span: rgb(243, 140, 71);
 }
 
 * {
@@ -33,6 +33,8 @@ body {
     width: 80%;
     margin: auto;
     padding: 2rem 0rem;
+    z-index: 2;
+    position: relative;
 }
 
 .line1, .line2 {
@@ -51,6 +53,7 @@ body {
     justify-content: space-between;
     align-items: center;
     color: var(--text);
+    background: var(--background);
 }
 
 .slide-image {
@@ -100,11 +103,11 @@ body {
 }
 
 .services-span {
-    color: var(--Span);
+    color: rgb(167, 110, 231);
 }
 
 .myWork-span {
-    color: var(--Span);
+    color: rgb(55, 73, 236);
 }
 
 .explore {
@@ -117,7 +120,6 @@ body {
     text-decoration: none;
     align-self: flex-start;
     cursor: pointer;
-    
 }
 
 .nav-bar {
@@ -211,6 +213,29 @@ body {
     left: 50%;
     font-size: 0.5rem;
     transform: translate(-50%, -50%);
+  }
+
+.title {
+    position: relative;
+    overflow: hidden;
+  }
+
+.title-swipe {
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    position: absolute;
+    mix-blend-mode: darken;
+    transform: translateY(100%);
+  }
+
+.t-swipe1 {
+    background: var(--Span);
+  }
+
+.t-swipe2 {
+    background: rgb(167, 110, 231);
   }
 
 .scrollmagic-pin-spacer {
