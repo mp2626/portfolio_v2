@@ -82,6 +82,13 @@ body {
     font-size: 3rem;
 }
 
+.workLink {
+    font-family: "Abril Fatface";
+    font-size: 1.5rem;
+    padding-top: 0.5rem;
+    color: var(--text);
+}
+
 .description p{
     padding: 3rem 0rem;
     font-size: 1.5rem;
@@ -138,6 +145,11 @@ body {
     flex-basis: 30rem;
   }
 
+.nav-links a {
+    color: var(--background);
+    text-decoration: none;
+  }
+
 .nav-links h3 {
     padding: 3rem 0rem;
   }
@@ -149,6 +161,10 @@ body {
 .contact h2 {
     font-size: 3rem;
     padding: 2rem 0rem;
+  }
+
+.contact h3 {
+    padding: 0.5rem 0rem;
   }
 
 .contact p {
