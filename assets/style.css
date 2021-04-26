@@ -188,4 +188,31 @@ body {
     border: 2px solid white;
     border-radius: 50%;
     position: absolute;
+    transform: translate(-50%, -50%);
+    pointer-events: none;
+    transition: all 0.2s ease-in-out;
+    transition-property: background, transform;
+    transform-origin: 130% 130%;
 }
+
+.cursor.nav-active {
+    background: rgb(86, 124, 228);
+    transform: scale(1.5);
+  }
+
+.cursor.explore-active {
+    background: white;
+    transform: scale(1.5);
+  }
+
+.cursor-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    font-size: 0.5rem;
+    transform: translate(-50%, -50%);
+  }
+
+.scrollmagic-pin-spacer {
+    position: static !important;
+  }

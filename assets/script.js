@@ -38,7 +38,11 @@ function animateSlides() {
             .addTo(controller);
         // create scene page
         const pageTl = gsap.timeline()
-        pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 })
+        let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
+        console.log(nextSlide);
+        pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
+        pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
+        pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
         // scene
         pageScene = new ScrollMagic.Scene({
             triggerElement: slide,
@@ -57,4 +61,37 @@ function animateSlides() {
 
     });
 }
+// mouse vars
+const mouse = document.querySelector('.cursor');
+const mouseTxt = mouse.querySelector("span");
+const burger = document.querySelector(".burger");
+
+// mouse location style
+function cursor(e) {
+    mouse.style.top = e.pageY + 'px';
+    mouse.style.left = e.pageX + 'px';
+}
+
+// adjust dic based on items that is currently being hovered over
+function activeCursor(e) {
+    const item = e.target;
+    if (item.id === "logo" || item.classList.contains("burger")) {
+        mouse.classList.add("nav-active");
+    } else {
+        mouse.classList.remove("nav-active");
+    }
+    if (item.classList.contains("explore")) {
+        mouse.classList.add("explore-active");
+        gsap.to(".title-swipe", 1, { y: "0%" });
+        mouseTxt.innerText = "Tap";
+    } else {
+        mouse.classList.remove("explore-active");
+        mouseTxt.innerText = "";
+        gsap.to(".title-swipe", 1, { y: "100%" });
+    }
+}
+
+window.addEventListener("mousemove", cursor);
+window.addEventListener("mouseover", activeCursor);
+
 animateSlides();
