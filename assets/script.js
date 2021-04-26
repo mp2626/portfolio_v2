@@ -8,16 +8,17 @@ function animateSlides() {
     // selections
     const sliders = document.querySelectorAll('.slide')
     const nav = document.querySelector('.nav-header')
-    // slide loop
+    // slide loop for each slide
     sliders.forEach((slide, index, slides) => {
         const revealImg = slide.querySelector('.reveal-image');
         const img = slide.querySelector('img');
         const revealText = slide.querySelector('.reveal-text');
 
-        // GSAP trial
+        // GSAP trial - moves divs slides to cover img and text
         const slideTl = gsap.timeline({
             defaults: { duration: 1, ease: "power2.inOut" }
         });
+        // moves slide location
         slideTl.fromTo(revealImg, { x: '0%' }, { x: '100%' });
         slideTl.fromTo(img, { scale: 2 }, { scale: 1 }, '-=1');
         slideTl.fromTo(revealText, { x: '0%' }, { x: '100%' }, '-=0.75');
@@ -30,31 +31,30 @@ function animateSlides() {
             reverse: false
         })
             .setTween(slideTl)
-            .addIndicators({
-                colorStart: "white",
-                colorTrigger: "white",
-                name: "slide"
-            })
+            // .addIndicators({
+            //     colorStart: "white",
+            //     colorTrigger: "white",
+            //     name: "slide"
+            // })
             .addTo(controller);
-        // create scene page
+        // create scene page and moves slide
         const pageTl = gsap.timeline()
         let nextSlide = slides.length - 1 === index ? 'end' : slides[index + 1];
-        console.log(nextSlide);
         pageTl.fromTo(nextSlide, { y: "0%" }, { y: "50%" });
         pageTl.fromTo(slide, { opacity: 1, scale: 1 }, { opacity: 0, scale: 0.5 });
         pageTl.fromTo(nextSlide, { y: "50%" }, { y: "0%" }, "-=0.5");
-        // scene
+        // scene page
         pageScene = new ScrollMagic.Scene({
             triggerElement: slide,
             duration: '100%',
             triggerHook: 0,
         })
-            .addIndicators({
-                colorStart: "white",
-                colorTrigger: "white",
-                name: "page",
-                indent: 200
-            })
+            // .addIndicators({
+            //     colorStart: "white",
+            //     colorTrigger: "white",
+            //     name: "page",
+            //     indent: 200
+            // })
             .setPin(slide, { pushFollowers: false })
             .setTween(pageTl)
             .addTo(controller)
@@ -72,7 +72,7 @@ function cursor(e) {
     mouse.style.left = e.pageX + 'px';
 }
 
-// adjust dic based on items that is currently being hovered over
+// adjust div based on item that is currently being hovered over, applies new class to adjust div.
 function activeCursor(e) {
     const item = e.target;
     if (item.id === "logo" || item.classList.contains("burger")) {
@@ -90,7 +90,7 @@ function activeCursor(e) {
         gsap.to(".title-swipe", 1, { y: "100%" });
     }
 }
-// nav bar toggle
+// nav bar toggle used to expand/hide nav div
 function navToggle(e) {
     if (!e.target.classList.contains("active")) {
         e.target.classList.add("active");
