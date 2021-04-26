@@ -110,7 +110,7 @@ body.hide {
 }
 
 .myWork-span {
-    color: rgb(55, 73, 236);
+    color: var(--Span);
 }
 
 .explore {
